@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000000; /* Fundo preto */
+        }
+    </style>
+   <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito de Partículas</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000; /* Cor de fundo para destacar as partículas */
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00ff00"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00ff00",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 2
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
+</head>
+<body class="text-green-400">
+    <div id="particles-js"></div>
+    <header class="bg-gray-900 text-green-400 p-6 text-center text-3xl font-bold">Facilita Sala do Futuro</header>
+
+    <section class="flex flex-col items-center justify-center min-h-screen p-6 relative">
+        <div class="relative max-w-2xl text-center bg-gray-900 bg-opacity-80 p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-semibold mb-4">Pagamento</h2>
+            <p class="text-xl mb-4">Produto: Expansão <span id="produto" class="font-bold text-green-500"></span></p>
+            <p class="text-xl mb-6">Preço: R$ 20  <span id="preco" class="font-bold text-green-500"></span></p>
+
+            <!-- Formulário para preencher os dados -->
+            <form action="processa_pagamento.php" method="POST" class="space-y-6">
+                <!-- Produto e preço ocultos, enviados no formulário -->
+                <input type="hidden" name="produto" id="produto_input">
+                <input type="hidden" name="preco" id="preco_input">
+
+                <div>
+                    <label for="nome" class="text-lg font-medium">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required class="p-3 mt-2 w-full border border-green-500 rounded text-black focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label for="ra" class="text-lg font-medium">RA:</label>
+                    <input type="text" id="ra" name="ra" required class="p-3 mt-2 w-full border border-green-500 rounded text-black focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label for="senha" class="text-lg font-medium">Senha:</label>
+                    <input type="password" id="senha" name="senha" required class="p-3 mt-2 w-full border border-green-500 rounded text-black focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label for="gmail" class="text-lg font-medium">Gmail:</label>
+                    <input type="email" id="gmail" name="gmail" required class="p-3 mt-2 w-full border border-green-500 rounded text-black focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label for="telefone" class="text-lg font-medium">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" required class="p-3 mt-2 w-full border border-green-500 rounded text-black focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <button type="submit" class="mt-6 bg-green-500 text-black px-6 py-3 rounded-lg text-lg shadow-lg hover:bg-green-700 transition">Efetuar Pagamento</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Lições</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-black text-green-400">
+
+    <!-- Seção para o efeito de partículas -->
+    <div id="particles-js"></div>
+
+    <!-- Cabeçalho -->
+    <header class="bg-gray-900 text-green-400 p-6 text-center text-3xl font-bold">Facilita Sala do Futuro</header>
+    
+    <!-- Seção de lições -->
+    <section class="flex flex-col items-center justify-center min-h-screen p-6 relative">
+        <div x-data="{ open: false, combos: false }" class="relative max-w-2xl text-center">
+            <h1 class="text-4xl font-bold mb-4">Cansado de fazer lições?</h1>
+            <p class="text-lg text-green-300">Adquira agora mesmo.</p>
+            <button @click="open = !open" class="mt-6 bg-green-500 text-black px-6 py-3 rounded-lg text-lg shadow-lg hover:bg-green-700 transition">Ver Lições</button>
+            
+            <div x-show="open" class="mt-6 bg-gray-900 shadow-lg rounded-lg p-6 w-full text-green-300">
+                <h2 class="text-2xl font-semibold mb-4">TABELA DE VALORES</h2>
+                <table class="w-full border-collapse border border-green-500 shadow-lg rounded-lg overflow-hidden">
+                    <thead>
+                        <tr class="bg-green-700 text-black">
+                            <th class="border border-green-500 p-3 text-lg">Lição</th>
+                            <th class="border border-green-500 p-3 text-lg">Preço</th>
+                            <th class="border border-green-500 p-3 text-lg">Comprar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-gray-800 transition">
+                            <td class="border border-green-500 p-3">📌 EXPANSÃO</td>
+                            <td class="border border-green-500 p-3">R$ 20,00</td>
+                            <td><a href="exp.html?produto=EXPANSÃO&preco=20" class="text-green-300">Comprar</a></td> <!-- Redireciona para pagamento.html -->
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition">
+                            <td class="border border-green-500 p-3">🗣 SPEAK (1 NÍVEL)</td>
+                            <td class="border border-green-500 p-3">R$ 8,00</td>
+                            <td><a href="pagamento.html?produto=SPEAK&preco=8" class="text-green-300">Comprar</a></td> <!-- Redireciona para pagamento.html -->
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition">
+                            <td class="border border-green-500 p-3">🎓 ALURA</td>
+                            <td class="border border-green-500 p-3">R$ 6,00</td>
+                            <td><a href="pagamento.html?produto=ALURA&preco=6" class="text-green-300">Comprar</a></td> <!-- Redireciona para pagamento.html -->
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition">
+                            <td class="border border-green-500 p-3">📖 LEIA</td>
+                            <td class="border border-green-500 p-3">R$ 6,00</td>
+                            <td><a href="pagamento.html?produto=LEIA&preco=6" class="text-green-300">Comprar</a></td> <!-- Redireciona para pagamento.html -->
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition">
+                            <td class="border border-green-500 p-3">📝 REDAÇÃO</td>
+                            <td class="border border-green-500 p-3">R$ 6,00</td>
+                            <td><a href="pagamento.html?produto=REDACAO&preco=6" class="text-green-300">Comprar</a></td> <!-- Redireciona para pagamento.html -->
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition">
+                            <td class="border border-green-500 p-3">📂 TAREFA SP</td>
+                            <td class="border border-green-500 p-3">R$ 6,00</td>
+                            <td><a href="pagamento.html?produto=TAREFA&preco=6" class="text-green-300">Comprar</a></td> <!-- Redireciona para pagamento.html -->
+                        </tr>
+                        <tr class="hover:bg-gray-800 transition">
+                            <td class="border border-green-500 p-3">💡 KHAN ACADEMY</td>
+                            <td class="border border-green-500 p-3">R$ 6,00</td>
+                            <td><a href="pagamento.html?produto=KHAN&preco=6" class="text-green-300">Comprar</a></td> <!-- Redireciona para pagamento.html -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100 },
+                "size": { "value": 3 },
+                "color": { "value": "#00ff00" },
+                "move": { "speed": 2 }
+            }
+        });
+    </script>
+
+</body>
+</html>
